@@ -4,17 +4,20 @@
 </form>
 
 <table>
-    <% if (preguntas.length == 0){ %>
+    <% if (quizes.length == 0){ %>
         <p>
             Ninguna respuesta encontrada.
         </p>
 
     <%}%>
 
-    <% var i; for (i = 0; i < preguntas.length; i++){ %>
+    <% var i; for (i = 0; i < quizes.length; i++){ %>
             <tr>
                 <td>
-                    <a href="/quizes/<%= preguntas[i].id %>"><%= preguntas[i].pregunta %></a>
+                    <a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
+                </td>
+                <td>
+                    <a href="/quizes/<%= quizes[i].id %>/edit"><button type="button" name="edit">Editar</button></a>
                 </td>
             </tr>
     <% } %>
