@@ -4,6 +4,13 @@
 </form>
 
 <table>
+    <% if (preguntas.length == 0){ %>
+        <p>
+            Ninguna respuesta encontrada.
+        </p>
+
+    <%}%>
+
     <% var i; for (i = 0; i < preguntas.length; i++){ %>
             <tr>
                 <td>

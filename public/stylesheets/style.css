@@ -16,6 +16,10 @@ body    {
 section > div   {
     padding: 20px;
 }
+section > p {
+    font: 16px Georgia, Helvetica, Arial, sans-serif;
+}
+
 header, nav, section    {
     background: #eee; text-align: center;
 }
