@@ -19,7 +19,16 @@
                 <span> <a href="/author">Autores</a>
             </nav>
             <section class="main" id="s1">
-                <%- body %>
+                <% if (errors.length){ %>
+                    <span id='ErrorMsgs'>
+                        Corregir errores: <br />
+                        <% for (var i in errors) { %>
+                            <span><%=errors[i].message %></span><br />
+                        <%}%>
+                    </span>
+                <%}%>
+
+                <div ><%- body %></div>
             </section>
             <footer class="main" id="f1">
                 <a href="https://github.com/t321/quizMOOC">https://github.com/t321/quizMOOC</a>
