@@ -2,11 +2,11 @@ var models = require('../models/models.js');
 
 //Autoload - salta si la ruta contiene :quizId
 exports.load = function (req, res, next, quizId) {
-    models.Quiz.findById(quizId).then(
-        function (quiz) {
+    models.Quiz.find({
+            where: {id: Number(quizId)},
+            include: [{model: models.Comment}]
+        }).then(function (quiz) {
             if (quiz) {
-                console.log("quiz: "+ quiz);
-                console.log("quizId: " + quizId);
                 req.quiz= quiz;
                 next();
             }else {
